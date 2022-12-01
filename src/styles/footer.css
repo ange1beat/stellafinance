@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.Community {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.programming {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Community a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+
+.programming a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+
+.Community a:hover {
+    color: #6c6c6c
+}
+
+.programming a:hover {
+    color: #6c6c6c
+}

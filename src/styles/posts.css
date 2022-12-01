@@ -1,0 +1,87 @@
+.wrapperPosts {
+    border-radius: 5px;
+    width: 250px;
+    height: 450px;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: black 1.95px 1.95px 2.6px;
+    margin: 5px;
+}
+
+.headingPost {
+    color: white;
+    font-weight: bold;
+}
+
+.postText {
+    color: white;
+    padding: 5px;
+    flex: 5;
+}
+
+.postImg img {
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;	
+}
+
+.timePost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 40px;
+    border-radius: 5px;
+    width: 100%;
+    color: #5c5c5c;
+    background-color: #3c3c3c
+}
+
+.timePost span {
+    padding: 3px;
+    flex: 1;
+    font-size: 15px;
+    transition: 0.2s linear;
+}
+
+.imgHeart {
+    flex:2;
+    padding: 3px;
+}
+
+.timePost img {
+    vertical-align: top;
+    padding: 3px;
+    width: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.2s linear;
+    transform-origin: center;
+}
+
+.timePost img:hover {
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
+.countLikes {
+    font-weight: bold;
+    flex: 8;
+}
+
+@media screen and (max-width: 650px) {
+    .wrapperPosts {
+        width: auto;
+        height: max-content;
+    }
+
+    .postImg img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .countLikes {
+        flex: 20;
+    }
+}

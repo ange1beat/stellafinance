@@ -1,0 +1,167 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+}
+
+.logo {
+    flex: 4;
+    background-color: white;
+}
+
+.logo img {
+    vertical-align: top;
+    width: 150px;
+    background-color: white;
+}
+
+.rates {
+    margin-right: 10px;
+    min-width: 310px;
+    flex: 4;
+}
+
+.connect {
+    min-width: 150px;
+    margin-right: 10px;
+    flex: 3;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.connect {
+    background: linear-gradient(268deg, #5ab8f7,#5ae1f7,  #5a9cf7, #5ae1f7);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+    transition: 0.2s linear;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+
+.connect:hover {
+    font-size: larger;
+}
+
+.nav {
+    display: flex;
+    flex: 8;
+    margin-right: 10px;
+    background: linear-gradient(-45deg, #87cefa, #36adf7);
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.navCom {
+    border-radius: 5px;
+    padding-left: 55px;
+    padding-right: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    line-height: none;
+    transition: 0.2s linear;
+}
+
+.navCom:hover {
+    background-color: #0c78bb;
+    box-shadow: 0px 5px black;
+}
+
+.menu {
+    display: none;
+}
+
+.navEl {
+    display: none;
+}
+
+
+@media screen and (max-width: 650px) {
+    .rates {
+        display: none;
+    }
+
+    .connect {
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .nav {
+        display: none;
+        flex: 1;
+    }
+
+    .menu {
+        display: flex;
+    }
+    .menu img {
+        width: 30px;
+        margin-right: 7px;
+    }
+
+    .wrapper {
+        position: fixed;
+    }
+
+    .navM {
+        position: fixed;
+        width: 100%;
+        margin-top: 44px;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(-45deg, #87cefa, #36adf7);
+    }
+
+    .navEl {
+        display: block;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .navEl:hover {
+        background-color: #0c78bb;
+    }
+}
+
+.navM {
+    display: none;
+}

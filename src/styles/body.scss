@@ -1,0 +1,205 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.newz {
+  color: white;
+  flex:1;
+}
+
+.newsText {
+  z-index: -2;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  margin-top: 80px;
+  font-weight: bold;
+  text-shadow: 1px 5px cornflowerblue;
+}
+
+.Postz {
+    margin-top: 150px;
+    max-width: 550px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.moreNews {
+    border-radius: 5px;
+    width: 499px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #4c4c4c;
+    color: #9c9c9c;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.containerNews {
+  display: flex;
+}
+
+.moreNews:hover {
+    background-color: #1c1c1c;
+    color:cornflowerblue;
+}
+
+@media screen and (max-width: 650px) {
+
+  .newsText {
+    margin-top: 50px;
+  }
+
+    .body {
+        background-size: 300%;
+        background-position: 50% 10%;
+    }
+
+    .containerNews {
+      flex: 3;
+      display: flex;
+      width: 97.5%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .moreNews {
+        height: 25px;
+        width: 93.55%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .Postz {
+      flex-direction: column;
+      margin-top: 100px;
+    }
+}
+
+
+
+
+//starssssssssssssssssssssssssssssssssssss
+
+
+
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+body {
+   background: black;
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  color: white;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
+}
+
+.star {
+  $star-count: 50;
+  --star-color: var(--primary-color);
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+  
+  @include sp-layout {
+    // For mobile performance, tail-fade animation will be removed QAQ
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{random_range(500em, 750em) / 100};
+      --top-offset: #{random_range(0vh, 10000vh) / 100};
+      --fall-duration: #{random_range(6000, 12000s) / 1000};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%, 80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}

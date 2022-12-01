@@ -1,0 +1,41 @@
+.wrapperPrices {
+    display: flex;
+    align-items: center;
+    padding-top: 1px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    height: 29px;
+    
+}
+
+.wrapperPrices img {
+    width: 25px;
+    vertical-align: top;
+}
+
+.coinBTC {
+    padding-left: 5px;
+}
+
+.coinBTC span {
+    padding-left: 5px;
+}
+
+.coinETH {
+    padding-left: 20px;
+}
+
+
+.coinBNB {
+    padding-left: 25px;
+}
+
+.coinBNB span {
+    padding-left: 8px;
+}
+
+@media screen and (max-width: 650px) {
+    .wrapperPrices {
+        padding-right: 15px;
+    }
+}
